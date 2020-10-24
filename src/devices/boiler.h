@@ -124,6 +124,12 @@ class Boiler : public EMSdevice {
     uint8_t  wWType_         = EMS_VALUE_UINT_NOTSET;   // 0-off, 1-flow, 2-flowbuffer, 3-buffer, 4-layered buffer
     uint8_t  wWActive_       = EMS_VALUE_BOOL_NOTSET;
 
+    // UBAEnergyMonitor
+    uint32_t EControlUnit_        = EMS_VALUE_ULONG_NOTSET;   // [s]
+    uint32_t EEnergyOutput_        = EMS_VALUE_ULONG_NOTSET; // EnergyOutput [kWh]
+    uint32_t EEnergyOutputWW_       = EMS_VALUE_ULONG_NOTSET; // EnergyOutput Warm Water [kWh]
+    uint32_t EEnergyOutputCH_        = EMS_VALUE_ULONG_NOTSET;  // EnergyOutput CentralHeater [kWh]
+
     // UBATotalUptime
     uint32_t UBAuptime_ = EMS_VALUE_ULONG_NOTSET; // Total UBA working hours
 
@@ -170,6 +176,7 @@ class Boiler : public EMSdevice {
     void process_UBAMaintenanceData(std::shared_ptr<const Telegram> telegram);
     void process_UBAErrorMessage(std::shared_ptr<const Telegram> telegram);
     void process_UBADHWStatus(std::shared_ptr<const Telegram> telegram);
+    void process_UBAEnergyMonitor(std::shared_ptr<const Telegram> telegram);
 
     // commands - none of these use the additional id parameter
     bool set_warmwater_mode(const char * value, const int8_t id);

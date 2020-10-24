@@ -196,6 +196,10 @@ MAKE_PSTR(wWStarts, "Warm water # starts")
 MAKE_PSTR(wWWorkM, "Warm water active time")
 MAKE_PSTR(setBurnPow, "Boiler burner set power")
 MAKE_PSTR(burnStarts, "Burner # starts")
+MAKE_PSTR(EControlUnit, "Active time [s]")
+MAKE_PSTR(EEnergyOutput, "Burner # starts")
+MAKE_PSTR(EEnergyOutputWW, "Burner # starts")
+MAKE_PSTR(EEnergyOutputCH, "Burner # starts")
 
 // solar
 MAKE_PSTR(collectorTemp, "Collector temperature (TS1)")
